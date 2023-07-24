@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-class MainWidget extends StatelessWidget{
+class MainWidget extends StatelessWidget {
+  late final double _size;
+  late final Widget? _body;
 
-  late final _size;
-  late final _body;
-
-  MainWidget({double? size = 10,Widget body = const Center(child: Text("no value"))}){
+  MainWidget({
+    super.key,
+    double size = 10,
+    Widget body = const Center(
+      child: Text(
+        "no value",
+      ),
+    ),
+  }) {
     _size = size;
     _body = body;
   }
@@ -18,7 +25,7 @@ class MainWidget extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: _height,
       width: _width,
       child: Stack(
@@ -26,27 +33,26 @@ class MainWidget extends StatelessWidget{
           Align(
             alignment: AlignmentDirectional.topCenter,
             child: Container(
-              height: _plateHeight,
-              width: _plateWidth,
-              decoration: BoxDecoration(
+                height: _plateHeight,
+                width: _plateWidth,
+                decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(
-                  color: Colors.black,
-                  width: 5
-                )
-              ),
-              child: _body
-            ),
+                    color: Colors.black,
+                    width: 5,
+                  ),
+                ),
+                child: _body),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Image.asset(
-            'assets/main_widget.png',
-             width: _stickerWidth,
-          )
-          )// STICKER HERE!
+              'assets/main_widget.png',
+              width: _stickerWidth,
+            ),
+          ) // STICKER HERE!
         ],
       ),
     );
   }
-}//14.12
+} //14.12

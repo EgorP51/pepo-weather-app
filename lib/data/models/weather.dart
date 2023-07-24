@@ -1,10 +1,10 @@
 class Weather {
-  final temperature;
-  final description;
-  final time;
-  final windSpeed;
-  final sunrise;
-  final sunset;
+  final int? temperature;
+  final String? description;
+  final DateTime? time;
+  final double? windSpeed;
+  final DateTime? sunrise;
+  final DateTime? sunset;
 
 
   Weather(
